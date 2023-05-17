@@ -14,28 +14,33 @@
     
     
 })();
+// Smooth scroll using ID tags
 
-/*
-document.querySelectorAll(".img-hover-zoom").forEach((item) => {
-    const cursorGeometric = item.querySelector(".cursor-geometric");
-  
-    item.addEventListener("mouseenter", () => {
-      gsap.to(cursorGeometric, {
-        scale: 10,
-        duration: 0.3,
-        ease: "power2.out",
-      });
-    });
-  
-    item.addEventListener("mouseleave", () => {
-      gsap.to(cursorGeometric, {
-        scale: 1,
-        duration: 0.3,
-        ease: "power2.out",
-      });
+// Select all anchor elements that have a href attribute starting with '#'
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+
+  // Add a click event listener to each link
+  link.addEventListener('click', (event) => {
+
+    // Prevent the default action (jump scroll) from occurring
+    event.preventDefault();
+
+    // Get the target element using the href attribute value
+    const targetElement = document.querySelector(event.currentTarget.getAttribute('href'));
+
+    // If the target element doesn't exist, return early to prevent errors
+    if (!targetElement) {
+      console.warn(`Target element not found for href: ${event.currentTarget.getAttribute('href')}`);
+      return;
+    }
+
+    // Scroll smoothly to the target element
+    targetElement.scrollIntoView({
+      behavior: 'smooth',
     });
   });
-*/  
+});
+
 
 const headerContainer = document.querySelector('.home-header-container');
   const headerH1 = document.querySelector('.homeheader');

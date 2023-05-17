@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}
+
 main {
   max-width: 80em;
   min-width: 30em;
