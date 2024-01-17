@@ -743,7 +743,6 @@ footer {
   .three-columns-grid-gallery img {
     margin: 5%;
   }
-
 }
 
 @media (min-width: 1080px) and (max-width:1468px) {
@@ -844,6 +843,10 @@ footer {
 
   .landContainer {
     overflow-x: hidden;
+  }
+
+  .gallery-img {
+    margin-top: 10%;
   }
 
   .blobcontainer {
