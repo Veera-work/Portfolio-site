@@ -84,6 +84,23 @@ const headerContainer = document.querySelector('.home-header-container');
       });
   });
 
+  const card = document.querySelector(".deskpad");
+  card.addEventListener("mousemove",cardMouseMove)
+
+  function cardMouseMove(){
+    const cardWidth = card.offsetWidth;
+    const cardHeight = card.offsetHeight;
+    const centerX = card.offsetLeft + cardWidth/2;
+    const centerY = card.offsetRight + cardHeight/2;
+    const mouseX = event.clientX - clientX;
+    const mouseY = event.clientY - clientY;
+    const rotateX = 10*mouseY/(cardHeight/2)
+    const rotateY = 10*mouseX/(cardHeight/2)
+  
+    card.style.transform = 'rotateX(${rotateX}deg) rotateY(${rotateY}deg)'
+  }
+
+  
 /*
   const headerContainer = document.querySelector('.home-header-container');
   const headerH1 = document.querySelector('.homeheader');
