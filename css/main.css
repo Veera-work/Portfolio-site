@@ -768,6 +768,14 @@ footer {
   }
 }
 
+@media (min-width: 2160px) {
+
+  .blobcontainer{
+    display: none;
+  }
+
+}
+
 @media (min-width: 280px) and (max-width:812px) {
   main {
     max-width: 24em;
