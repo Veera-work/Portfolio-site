@@ -15,7 +15,7 @@ main {
   margin: 0 auto;
   height: 100%;
   margin-top: 0rem;
-  padding-left: 5%;
+  padding-left: 5%; 
 }
 
 .mainLanding {
@@ -385,6 +385,7 @@ a.underline {
   color: #010101;
   opacity: 1;
   font-size: 80%;
+  line-height: 1.7;
   width: 100%;
   margin: 0;
   padding-left: 12.5%;
@@ -395,6 +396,7 @@ a.underline {
 .tilt-content h3 {
   font-size: large;
   padding-top: 5%;
+  line-height: 1.5;
 }
 
 .tilt-spacer {
