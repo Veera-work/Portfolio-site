@@ -3,20 +3,21 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7KB15PJF1N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7KB15PJF1N"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-7KB15PJF1N');
-</script>
+        gtag('config', 'G-7KB15PJF1N');
+    </script>
 
     <meta charset="UTF-8">
     <title>Vouch4U: Cash voucher approvals | Veera</title>
     <meta name="Author" content="Veera">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:thin,italic,extra-light,light,100,200,300,400,500,600,700,800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:thin,italic,extra-light,light,100,200,300,400,500,600,700,800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="icon" type="image/png" href="../../images/logo-fav.png">
@@ -87,8 +88,29 @@
         </p>
 
         <h2>Problem</h2>
-        <p>The existing cash voucher approval process is time-consuming, confusing, and disorganized. Managers struggle
-            to keep track of multiple voucher requests, and employees find the process difficult to navigate.</p>
+        <br>
+        <p style="border-left: 2px solid blue; padding-left: 2%;"><strong> What is a cash voucher?</strong><br>
+            A cash voucher is a document that acts as proof of a cash transaction. It is used to bookkeep transactions
+            and validate cash payments made for business expenses like Food, Travel etc. It typically involves several
+            levels of approvals from managers and CEO before the amount is settled to the employee.
+        </p><br>
+        <p style="padding-left: 2%;">
+            <img style="width: 80%;" src="../images/graphic/Vouch/Voucher filled.png"><br>
+            <caption ><i>Current paper based cash vouchers that are used</i></caption>
+            <br><br><br></p>
+        <p> <strong> Employees collect the bills and submit at the office with a voucher</strong><br><br>
+            <img class="fit" src="../images/graphic/Vouch/Cash reimbursement.png"><br><br><br>
+            However, there are several problems with the overall cash voucher/ reimbursement process. Some of the key problems are:
+        </p>
+        <br>
+
+        <p style="border-left: 2px solid blue; padding-left: 2%; background-color: rgb(240, 240, 240)"><br><strong> Problem #1: Lack of timely updates lead to frustration for employees</strong></p>
+        <p><img class="fit" src="../images/graphic/Vouch/Prob1 Employee frustration.png"></p>
+
+        <p style="border-left: 2px solid blue; padding-left: 2%; background-color: rgb(240, 240, 240)"><br><strong> Problem #2: Managers/CEOs get overloaded with Vouchers after Business trips.</strong></p>
+        <p><img class="fit" src="../images/graphic/Vouch/Prob2 Management overload.png"></p>
+
+        <p><strong> TLDR: </strong>The existing cash voucher approval process is time-consuming, confusing, and disorganized. Managers struggle to keep track of multiple voucher requests, and employees find the process difficult to navigate.</p>
 
         <h2>Goals</h2>
         <p> 1. Streamline the cash voucher approval process for managers and employees<br>
@@ -97,11 +119,11 @@
         </p>
 
         <h2 class="smooth-scroll" id="research">Research</h2>
-        <p >Through a combination of interviews and on-field observations, I gained insights into the pain points,
+        <p>Through a combination of interviews and on-field observations, I gained insights into the pain points,
             needs, and expectations of managers and employees. Some of the painpoints during the interviews are quoted
             below
         </p>
-            <p class="infobox">
+        <p class="infobox">
             <i><strong>
                     "Managing approvals takes too much time, and tracking each of the relevant approvers for follow-ups
                     is difficult. I need a more efficient way to oversee the process and monitor my team anywhere."
@@ -129,30 +151,34 @@
         -->
         <p>I gathered all the insights and identified specific user needs for both managers and employees based on the
             research insights, taking into account their varying levels of technological proficiency.<br>
-            <ol>
+        <ol>
             <li><strong> Manager Oversight:</strong><br> CEOs and managers need a system that simplifies approvals and
-            allows efficient monitoring of their team from anywhere.</li><br>
-            
-            <li><strong>Digital Document Management:</strong><br> Accountants struggle with the current system that only allows
-            follow-ups after physical bill submissions. They require a digital solution for screening, tracking, and
-            managing voucher requests, all while complying with physical records requirements.</li><br>
-            
-            <li><strong>Faster Reimbursement:</strong><br> Groundstaff, burdened by up to 10-day reimbursement waits, desire a
-            quicker and more transparent process.</li><br>
-            
-            <li><strong>App Customization for User Tech Literacy:</strong><br> Given that ground staff often lack sufficient
-            tech-literacy to handle requests independently, the app design should primarily cater to accountants and
-            managing staff.</li><br>
-            
-            <li><strong>Smoother Communication:</strong><br> The existing process complicates status communication and follow-up.
-            A more streamlined, transparent system would significantly enhance user experience.</li><br>
+                allows efficient monitoring of their team from anywhere.</li><br>
+
+            <li><strong>Digital Document Management:</strong><br> Accountants struggle with the current system that only
+                allows
+                follow-ups after physical bill submissions. They require a digital solution for screening, tracking, and
+                managing voucher requests, all while complying with physical records requirements.</li><br>
+
+            <li><strong>Faster Reimbursement:</strong><br> Groundstaff, burdened by up to 10-day reimbursement waits,
+                desire a
+                quicker and more transparent process.</li><br>
+
+            <li><strong>App Customization for User Tech Literacy:</strong><br> Given that ground staff often lack
+                sufficient
+                tech-literacy to handle requests independently, the app design should primarily cater to accountants and
+                managing staff.</li><br>
+
+            <li><strong>Smoother Communication:</strong><br> The existing process complicates status communication and
+                follow-up.
+                A more streamlined, transparent system would significantly enhance user experience.</li><br>
         </ol>
         </p>
         <p>
             Personas were during the initial research and analysis phase using the data gathered from interviews,
             observations, and secondary research. Personas helped us empathize with the users and understand their
             needs, motivations, pain points, and goals. We used these personas <strong>to identify the unique user needs
-            </strong> for each person, <strong> prioritize features and design elements</strong> that address the most 
+            </strong> for each person, <strong> prioritize features and design elements</strong> that address the most
             critical needs of the Accountant and Manager/CEO personas.</p>
 
         <p><img class="fit deskpad" src="../images/graphic/Vouch/CEO_persona.png" alt="CEO_persona">
