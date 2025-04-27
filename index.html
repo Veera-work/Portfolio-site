@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Strategic Product Designer Veera Manoharan's portfolio showcasing selected works in UI/UX, XR, and AI-driven design.">
+    <title>Veera Manoharan - Strategic Product Designer</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="img/logo-fav.png">
+    <link rel="apple-touch-icon" href="img/logo-fav.png">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MEASUREMENT_ID');
+    </script>
+    </head>
+<body>
+    <div class="custom-cursor" aria-hidden="true">
+        <span class="cursor-view-text">VIEW</span>
+    </div>
+
+    <header class="header" role="banner">
+        <div class="webgl_wrapper" id="webgl_wrapper"></div>
+        <div class="noise"></div>
+        <div class="title_wrapper">
+            <div class="title_inner">
+                <div class="title title_line01 text_ani_wrap"><div class="stagger">Veera Manoharan</div></div>
+                 <div class="title title_line02 text_ani_wrap"><div class="stagger">A Strategic Product Designer with 5+ years of experience designing the interfaces of the future. I'm passionate about creating engaging experiences in emerging tech like AI & XR.</div></div>
+            </div>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true">
+            <span>Scroll</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+        </div>
+    </header>
+
+    <nav class="nav_main" role="navigation" aria-label="Primary">
+        <button class="hamburger-menu" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-navigation-overlay">
+            <span class="hamburger-line line-1"></span>
+            <span class="hamburger-line line-2"></span>
+            <span class="hamburger-line line-3"></span>
+        </button>
+
+        <div class="nav_wrapper desktop-nav-links">
+            <div class="nav_button home_button project-hover-target nav-logo-container">
+                <a href="#" class="home-link" aria-label="Homepage">
+                    <img src="img/logo-white.png" alt="Homepage Logo" class="site-logo nav-logo">
+                </a>
+            </div>
+            <div class="nav-link-group">
+                <div class="nav_button work_button text_ani_wrap project-hover-target"><a href="#work" class="stagger work-link">Work</a></div>
+                <div class="nav_button info_button text_ani_wrap project-hover-target"> <a href="#about" class="stagger info-link">About</a> </div>
+                <div class="nav_button contact_button text_ani_wrap project-hover-target"> <a href="#contact" class="stagger contact-link">Contact</a> </div>
+            </div>
+        </div>
+
+        <div class="mobile-nav-overlay" id="mobile-navigation-overlay" aria-hidden="true">
+            <div class="mobile-nav-logo-container">
+                <a href="#" aria-label="Homepage">
+                    <img src="img/logo-white.png" alt="Site Logo" class="site-logo mobile-nav-logo">
+                </a>
+            </div>
+            <div class="nav_button home_button"><a href="#" class="mobile-nav-link">Home</a></div>
+            <div class="nav_button work_button"><a href="#work" class="mobile-nav-link">Work</a></div>
+            <div class="nav_button info_button"><a href="#about" class="mobile-nav-link">About</a></div>
+            <div class="nav_button contact_button"><a href="#contact" class="mobile-nav-link">Contact</a></div>
+        </div>
+    </nav>
+
+    <main role="main">
+        <section class="work work_section" id="work">
+             <h2 class="work-title-heading">Selected Works</h2>
+
+           <a href="projects/vouch4u.html" class="project-item project-hover-target" data-project-id="vouch4u">
+                <span class="status-tag" style="-webkit-filter: invert(0%); filter: invert(0%);">Shipped</span>
+                <div class="project-image-wrapper">
+                    <img src="img/vouch4u-thumb.png" alt="Vouch4U Project Thumbnail" class="project-image" onerror="this.src='https://placehold.co/900x506/66bb6a/ffffff?text=Image+Not+Found'; this.alt='Placeholder image';">
+                </div>
+                <div class="project-text">
+                    <h3 class="project-title">Vouch4U</h3>
+                    <p class="project-desc">Streamlining Cash Voucher Approval for Kaveri Garage.</p>
+                </div>
+            </a>
+
+            <a href="projects/figo.html" class="project-item project-hover-target" data-project-id="figo">
+                <span class="status-tag">Concept</span>
+                <div class="project-image-wrapper">
+                     <img src="img/Figo-hero.png" alt="Figo Conceptual Design Thumbnail" class="project-image" onerror="this.src='https://placehold.co/900x506/ffca28/333333?text=Image+Not+Found'; this.alt='Placeholder image';">
+                </div>
+               <div class="project-text">
+                   <h3 class="project-title">Figo: Personal Finance</h3>
+                   <p class="project-desc">Strategy & Prototype for a Comprehensive Expense Tracker MVP.</p>
+               </div>
+            </a>
+
+             <a href="projects/virtual-events.html" class="project-item project-hover-target" data-project-id="virtual-events">
+                 <span class="status-tag">Shipped</span> <div class="project-image-wrapper">
+                     <img src="img/virtual-events-thumb.png" alt="Virtual Events Platform Project Thumbnail" class="project-image" onerror="this.src='https://placehold.co/900x506/42a5f5/ffffff?text=Image+Not+Found'; this.alt='Placeholder image';">
+                 </div>
+                 <div class="project-text">
+                     <h3 class="project-title">Virtual Events Platform</h3>
+                     <p class="project-desc">Designing an engaging, flexible, and accessible virtual events platform.</p>
+                 </div>
+             </a>
+
+             </section>
+
+        <section id="about" class="about-section content-block"> <div class="about-text">
+              <h2 class="work-title-heading">About Me</h2>
+              <p>Hi, I'm Veera, a Strategic Product Designer with over five years of experience shaping user experiences across Healthcare, Automotive, and Consumer Electronics. My background in Material Science provides a unique analytical lens through which I approach design challenges, always seeking to bridge the gap between user needs and tangible solutions.</p>
+              <p>I'm driven by the potential of emerging technologies, particularly AI and XR, to create more intuitive and impactful interactions. Currently exploring opportunities to where I can further leverage my research, strategy, and design skills to guide product vision.</p>
+            </div>
+            <div class="about-image-placeholder">
+                 <div class="floating-element floating-element-1"></div>
+                 <div class="floating-element floating-element-2"></div>
+                  <img src="img/profile-pic.png" alt="Veera Manoharan Profile Picture Placeholder" class="profile-pic-img" onerror="this.src='https://placehold.co/250x333/1c1c1e/888888?text=Profile+Pic'; this.alt='Placeholder image';">
+            </div>
+        </section>
+
+        <section class="expertise-section content-block">
+             <h3>Expertise</h3>
+             <ul class="expertise-list">
+                 <li>Product Strategy</li> <li>User Research & Analysis</li> <li>Market Opportunity Identification</li> <li>Interaction Design (UI/UX)</li> <li>XR Interaction Design (AR/VR)</li> <li>Prototyping & Testing</li> <li>Usability Engineering</li> <li>AI/ML Concepts in Design</li> <li>Design Thinking Facilitation</li>
+             </ul>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo" id="contact">
+        <div class="footer-content">
+            <a href="mailto:veeradwork@gmail.com" class="cta-button project-hover-target">Let's Connect</a>
+            <div class="social-links">
+                 <a href="https://www.linkedin.com/in/veeramanoharan/" title="LinkedIn (placeholder)" aria-label="LinkedIn Profile" class="project-hover-target social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                 <a href="#" title="GitHub (placeholder)" aria-label="GitHub Profile" class="project-hover-target social-icon"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <div class="copyright">&copy; 2025 Veera Manoharan Rajamannar.</div>
+        </div>
+    </footer>
+
+    <noscript>
+        <div class="noscript-warning">This site requires JavaScript for full functionality. Please enable JavaScript or upgrade your browser.</div>
+    </noscript>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+
+    <script src="js/global.js" defer></script>
+    <script src="js/index-animations.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figo v1 Case Study - Your Name Here - Product Designer Portfolio</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/project.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Added styles for persona table and NEW screen grid -->
+    <link rel="icon" type="image/png" href="../img/logo-fav.png">
+    <link rel="apple-touch-icon" href="../img/logo-fav.png">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MEASUREMENT_ID');
+    </script>
+</head>
+<body>
+    <div class="custom-cursor" aria-hidden="true">
+        <span class="cursor-view-text">VIEW</span>
+    </div>
+
+    <nav class="nav_main" role="navigation" aria-label="Primary">
+        <!-- Navigation elements -->
+        <button class="hamburger-menu" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-navigation-overlay">
+            <span class="hamburger-line line-1"></span><span class="hamburger-line line-2"></span><span class="hamburger-line line-3"></span>
+        </button>
+        <div class="nav_wrapper desktop-nav-links">
+            <div class="nav_button home_button project-hover-target nav-logo-container">
+                <a href="../index.html" class="home-link" aria-label="Homepage"><img src="../img/logo-white.png" alt="Homepage Logo" class="site-logo nav-logo"></a>
+            </div>
+            <div class="nav-link-group">
+                <div class="nav_button work_button text_ani_wrap project-hover-target"><a href="../index.html#work" class="stagger work-link">Work</a></div>
+                <div class="nav_button info_button text_ani_wrap project-hover-target"> <a href="../index.html#about" class="stagger info-link">About</a> </div>
+                <div class="nav_button contact_button text_ani_wrap project-hover-target"> <a href="../index.html#contact" class="stagger contact-link">Contact</a> </div>
+            </div>
+        </div>
+         <div class="mobile-nav-overlay" id="mobile-navigation-overlay" aria-hidden="true">
+            <div class="mobile-nav-logo-container">
+                <a href="../index.html" aria-label="Homepage"><img src="../img/logo-white.png" alt="Site Logo" class="site-logo mobile-nav-logo"></a>
+            </div>
+            <div class="nav_button home_button"><a href="../index.html" class="mobile-nav-link">Home</a></div>
+            <div class="nav_button work_button"><a href="../index.html#work" class="mobile-nav-link">Work</a></div>
+            <div class="nav_button info_button"><a href="../index.html#about" class="mobile-nav-link">About</a></div>
+            <div class="nav_button contact_button"><a href="../index.html#contact" class="mobile-nav-link">Contact</a></div>
+        </div>
+    </nav>
+
+    <div class="main-container project-content">
+
+        <div class="back-link-container content-block">
+            <a href="../index.html#work" class="back-link project-hover-target">← Back to Work</a>
+        </div>
+
+        <header class="project-header content-block">
+            <h1>Figo v1: Building Trust First in India's Busy Digital Wallet</h1>
+            <p class="subtitle">Designing a privacy-focused, user-controlled MVP to cut through UPI noise and simplify shared expenses for Indian users. A strategic design exploration.</p>
+             <div class="info-card">
+                 <dl class="meta-info">
+                     <dt>Project Type</dt><dd>Conceptual FinTech Mobile App</dd>
+                     <dt>Role</dt><dd>Senior Product Designer (Lead UX/UI, Research, Strategy)</dd>
+                     <dt>Timeline</dt><dd>8 Weeks, Q1 2024</dd>
+                     <dt>Status</dt><dd>v1 Design Blueprint Completed</dd>
+                 </dl>
+             </div>
+        </header>
+
+        <section class="project-hero-image content-block">
+             <figure>
+                 <img src="../img/Figo-hero.png" alt="Figo App Interface Hero Composition" class="hero-image-parallax" onerror="this.src='https://placehold.co/900x506/1e88e5/ffffff?text=Figo+Hero+Image'; this.alt='Placeholder Figo hero image';">
+                 <figcaption>Figo v1: A conceptual MVP designed for trust and clarity in the Indian personal finance landscape.</figcaption>
+             </figure>
+        </section>
+
+        <!-- Section 1: Challenge, Opportunity, Research, Personas -->
+        <section class="problem-statement content-block">
+            <h2>1. The Challenge: Taming India's UPI Chaos & Earning User Trust</h2>
+            <p>India's Unified Payments Interface (UPI) boom brought convenience but also digital chaos. Users were drowning in micro-transactions, struggling to track spending, split costs fairly, or gain meaningful insights. Generic finance apps often missed the mark culturally and ran headfirst into a wall of **deep-seated privacy concerns** specific to the Indian market.</p>
+
+            <figure class="content-block text-support-visual">
+                <img src="../img/Figo-Stats.png" alt="Infographic showing India's large Millennial/Gen-Z population (52%, ~910M) and their focus on savings/investing." onerror="this.src='https://placehold.co/900x350/cccccc/333333?text=Visual:+Market+Size+&+Audience+Focus'; this.alt='Placeholder visual for market research data';">
+                <figcaption>Establishing the Opportunity: India's massive (~910M) and financially-minded Millennial & Gen-Z population presented a huge, receptive market for tailored financial tools.</figcaption>
+            </figure>
+            <p>Secondary research highlighted the sheer scale: over half of India's population (~910 million) comprises Millennials or Gen-Z, a demographic larger than that of the US and China combined, with a notable interest in saving and investing. While this confirmed the market potential, the core challenge remained: How could we launch a Figo v1 MVP that solved the *immediate daily pains* of this audience *without* triggering the prevalent privacy alarms, thereby building enough trust for future, more automated features?</p>
+
+            <h3>Understanding the User: Seeking Control Amidst the Noise</h3>
+            <p>To uncover those specific daily pains, I synthesized insights from primary interviews, surveys, and competitor analysis. Four key struggles emerged:</p>
+            <ol>
+                <li><strong>The Burden of Tracking:</strong> Daily UPI frequency made manual logging feel impossible.</li>
+                <li><strong>The "So What?" Data Deficit:</strong> Generic charts lacked relevance to personal goals.</li>
+                <li><strong>The Complexity of "Sharing":</strong> Splitting bills and tracking informal debts was messy and awkward.</li>
+                <li><strong>The Pervasive Trust Deficit:</strong> High skepticism about granting app permissions, especially bank access (AA).</li>
+            </ol>
+             <p>The synthesized insight was powerful: Users craved **effortless control** and **actionable clarity**, delivered through an experience they could fundamentally **trust**. This understanding directly shaped our core personas:</p>
+
+            <div class="table-container">
+                <table class="persona-table">
+                     <thead>
+                         <tr> <th>Persona</th> <th>Key Need / Pain Point</th> <th>How Figo V1 Helps</th> </tr>
+                     </thead>
+                     <tbody>
+                         <tr> <td>Priya (Overwhelmed Pro)</td> <td>Drowning in micro-transactions; needs speed/ease; tracking is a chore.</td> <td>Effortless entry (FAB, suggestions), gamification (streaks, points).</td> </tr>
+                         <tr> <td>Raj (Flatmate)</td> <td>Needs fair, transparent, easy sharing; current methods confusing.</td> <td>Simplified splitting, dedicated Group Hub with clear balances.</td> </tr>
+                         <tr> <td>Anjali (Planner)</td> <td>Seeks relevant insights & goal tracking.</td> <td>Goal linking, progress visualization. (Deeper insights post-V1).</td> </tr>
+                         <tr> <td>Vikram (Skeptic)</td> <td>Prioritizes privacy/control; wary of permissions (esp. bank access).</td> <td>Minimal permissions, on-demand requests, visual trust cues, data transparency.</td> </tr>
+                     </tbody>
+                 </table>
+            </div>
+        </section>
+
+        <!-- Section 2: Strategy Pivot -->
+        <section class="solution content-block">
+            <h2>2. The Strategic Pivot: Why "Trust First" Trumped Automation for V1</h2>
+            <p>While seamless automation via Account Aggregator (AA) was tempting, user research, especially the insights around Vikram (The Skeptic), revealed it was the wrong starting point for an unproven app. Demanding bank linking upfront would be an immediate deal-breaker for many. My analysis showed that **building trust was paramount**.</p>
+            <p>Therefore, I advocated for a strategic pivot: embrace manual entry not as a limitation, but as an opportunity to empower users with control and earn their confidence first. This led to the core V1 philosophy:</p>
+            <blockquote><strong>Build Trust Through Control, Delight Through Experience.</strong></blockquote>
+            <p>The resulting V1 strategy focused on: delivering an **outstanding manual tracking experience**, solving the **complex sharing problem** head-on (a key differentiator), using **gamification** to combat tracking fatigue, offering **flexible input options** (OCR, attachments), and clearly communicating **AA automation as a future upgrade** (Figo Pro) built on earned trust.</p>
+        </section>
+
+        <!-- Section 3: Design Solution & Outcome -->
+        <section class="solution content-block">
+            <h2>3. Designing Figo V1: Key Experiences for Clarity & Control</h2>
+            <p>Guided by the "Trust First" strategy, I designed the V1 interface to be clean, intuitive, and inherently trustworthy, directly addressing the identified user needs through key features:</p>
+            
+            <div class="solution-point">
+                <div class="solution-text">
+                    <h4>Effortless Tracking & Engagement</h4>
+                    <p>A persistent <strong>FAB</strong> provides instant access to add expenses. Smart suggestions and large targets minimize friction. A prominent <strong>'Your Progress' card</strong> on the Overview uses gamification (streaks, levels, points) to make consistent tracking rewarding, addressing Priya's fatigue.</p>
+                </div>
+                <div class="solution-visual">
+                    <figure>
+                        <img src="../img/figo-screen (1).png" alt="Figo Overview Screen showing progress card and FAB button" onerror="this.src='https://placehold.co/400x800/1e88e5/ffffff?text=Overview+Screen'; this.alt='Placeholder Overview Screen';">
+                        <figcaption>Overview screen with gamified progress tracking and easy expense entry</figcaption>
+                    </figure>
+                </div>
+            </div>
+            
+            <div class="solution-point reverse-layout">
+                <div class="solution-text">
+                    <h4>Seamless Sharing & Group Management</h4>
+                    <p>A simple <strong>'Split this Expense?' toggle</strong> leads to an intuitive flow for complex bills. The dedicated <strong>'Groups' tab</strong> offers a clear hub for managing shared finances, showing net balances and transaction details easily, solving Raj's main frustration.</p>
+                </div>
+                <div class="solution-visual">
+                    <figure>
+                        <img src="../img/figo-screen (4).png" alt="Figo Group Detail Screen" onerror="this.src='https://placehold.co/400x800/1e88e5/ffffff?text=Group+Detail+Screen'; this.alt='Placeholder Group Detail Screen';">
+                        <figcaption>Group Details screen showing clear balance information and easy settlement options</figcaption>
+                    </figure>
+                </div>
+            </div>
+            
+            <div class="solution-point">
+                <div class="solution-text">
+                    <h4>Actionable Clarity & Context</h4>
+                    <p>Users can <strong>link expenses to savings goals</strong>, visualized on the Overview (helping Anjali). The Activity feed provides <strong>clear transaction context</strong> (split status, payer, share, source tags) for better understanding.</p>
+                </div>
+                <div class="solution-visual">
+                    <figure>
+                        <img src="../img/figo-screen (2).png" alt="Figo Activity Screen" onerror="this.src='https://placehold.co/400x800/1e88e5/ffffff?text=Activity+Screen'; this.alt='Placeholder Activity Screen';">
+                        <figcaption>Activity feed with comprehensive transaction context and filtering options</figcaption>
+                    </figure>
+                </div>
+            </div>
+            
+            <h3>The V1 Blueprint: A Foundation Built on Trust</h3>
+            <p>The Figo v1 design blueprint directly tackles immediate Indian user pains while respecting privacy concerns. It delivers tangible value through streamlined manual tracking, engaging gamification, and robust sharing features, prioritizing user control and trust over premature automation.</p>
+            <h4>Hypothesized Impact (Conceptual)</h4>
+            <p>We hypothesized this approach could lead to **higher tracking consistency** (+50%), achieve **strong initial retention** (>30% M1), and maintain a **low onboarding drop-off rate** (<5%) due to minimal permission demands.</p>
+        </section>
+
+        <!-- Section 4: Iteration & Next Steps -->
+        <section class="validation-plan content-block">
+            <h2>4. Refining the Blueprint & Charting the Path Forward</h2>
+             <h3>Iteration: Honing the Experience Through Feedback</h3>
+             <p>Through scenario-based walkthroughs and heuristic evaluations against our personas, I identified and addressed several key areas for refinement in the V1 blueprint, including simplifying the split flow, enhancing gamification visibility, and optimizing the group view for clarity.</p>
+
+            <h3>Looking Ahead: Launch, Learn, and Evolve</h3>
+            <p>Figo v1 is the essential first step. The immediate path forward involves development handoff, launch, gathering real-world feedback, continuous iteration, and carefully assessing user comfort to determine the right timing for introducing **"Figo Pro" with Account Aggregator integration**.</p>
+        </section>
+
+        <!-- Other Projects Section -->
+        <section class="other-projects-section content-block">
+            <h2>Explore Other Works</h2>
+            <div class="other-projects-grid">
+                <a href="vouch4u.html" class="other-project-card project-hover-target">
+                    <img src="../img/vouch4u-thumb.png" alt="Vouch4U Thumbnail" onerror="this.src='https://placehold.co/900x506/66bb6a/ffffff?text=Image+Not+Found'; this.alt='Placeholder image';">
+                    <div class="other-project-text"><h4>Vouch4U</h4><p>Streamlining Cash Voucher Approval for Kaveri Garage.</p></div>
+                </a>
+                <a href="virtual-events.html" class="other-project-card project-hover-target">
+                    <img src="../img/virtual-events-thumb.png" alt="Virtual Events Platform Thumbnail" onerror="this.src='https://placehold.co/900x506/42a5f5/ffffff?text=Image+Not+Found'; this.alt='Placeholder image';">
+                    <div class="other-project-text"><h4>Virtual Events Platform</h4><p>Designing an engaging virtual events platform.</p></div>
+                </a>
+            </div>
+        </section>
+
+    </div> <!-- End .main-container -->
+
+    <footer class="footer" role="contentinfo" id="contact">
+        <!-- Footer elements -->
+        <div class="footer-content">
+            <a href="mailto:veeradwork@gmail.com" class="cta-button project-hover-target">Let's Connect</a>
+            <div class="social-links">
+                 <a href="https://www.linkedin.com/in/veeramanoharan/" title="LinkedIn" aria-label="LinkedIn Profile" class="project-hover-target social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                 <a href="#" title="GitHub" aria-label="GitHub Profile" class="project-hover-target social-icon"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <div class="copyright">&copy; 2025 Veera Manoharan Rajamannar.</div>
+        </div>
+    </footer>
+
+    <noscript>
+        <div class="noscript-warning">This site requires JavaScript for full functionality. Please enable JavaScript or upgrade your browser.</div>
+    </noscript>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" defer></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js" defer></script>
+     <script src="../js/global.js" defer></script>
+     <script src="../js/project-animations.js" defer></script>
+     <script src="../js/image-zoom.js" defer></script>
+
+</body>
+</html>

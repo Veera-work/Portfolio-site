@@ -1,0 +1,568 @@
+/* --- Style Guide / Global CSS Variables --- */
+:root {
+    /* Spacing - Standardized System */
+    --space-xxs: 4px;     /* Extra extra small spacing */
+    --space-xs: 8px;      /* Extra small spacing */
+    --space-sm: 16px;     /* Small spacing */
+    --space-md: 24px;     /* Medium spacing */
+    --space-lg: 32px;     /* Large spacing */
+    --space-xl: 48px;     /* Extra large spacing */
+    --space-xxl: 64px;    /* Extra extra large spacing */
+    
+    /* Legacy spacing variables - mapped to new system */
+    --padding-small: var(--space-sm);  
+    --padding-medium: var(--space-md); 
+    --padding-standard: var(--space-lg);
+    --gap-small: var(--space-md);     
+    --gap-standard: var(--space-xxl);
+    
+    /* Navigation */
+    --nav-gap: var(--space-md);
+    --nav-pill-padding-y: 8px;
+    --nav-pill-padding-x: var(--space-sm);
+    
+    /* Border Radii */
+    --border-radius-large: 16px;
+    --border-radius-medium: 12px;
+    --border-radius-pill: 999px;
+    --border-radius-circle: 50%;
+    
+    /* Dark Theme Colors */
+    --text-primary: #f5f5f7;
+    --text-secondary: #c5c5ca; /* Increased contrast */
+    --text-tertiary: #a8a8ae;  /* Increased contrast */
+    --bg-primary: #1c1c1e;
+    --bg-secondary: #0f0f0f;
+    --link-color: #5bf1a4;
+    --accent-color: #30d158;
+    --header-bg: #111111;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --nav-bg: rgba(28, 28, 30, 0.6);
+    
+    /* Cursor */
+    --cursor-size: 24px;
+    --cursor-hover-size: 96px;
+    --cursor-bg: rgba(255, 255, 255, 0.5); /* Increased contrast */
+    --cursor-text-color: #888; /* Black text for visibility */
+    --cursor-view-bg: rgba(0, 0, 0, 0.3); /* Background for VIEW text */
+    
+    /* Transitions */
+    --hover-transition: 0.2s ease-out;
+    
+    /* Fonts */
+    --font-serif: 'EB Garamond', serif;
+    --font-sans: 'Inter', sans-serif;
+    
+    /* Typography */
+    --base-font-size: 16px;
+    --line-height-normal: 1.65;
+    --line-height-relaxed: 1.75;
+    --text-rendering: optimizeLegibility;
+    
+    /* Box Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.25);
+    --shadow-hover: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Base HTML & Body Styles --- */
+html { 
+    width: 100%; 
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+    scroll-behavior: smooth;
+    font-size: var(--base-font-size);
+}
+body { 
+    margin: 0; 
+    background-color: var(--bg-secondary); 
+    color: var(--text-primary); 
+    overflow-x: hidden; 
+    font-family: var(--font-sans); 
+    /* Allow native cursor as fallback */
+    cursor: default;
+    opacity: 0; 
+    visibility: hidden; 
+    line-height: var(--line-height-normal);
+    -moz-osx-font-smoothing: grayscale; 
+    -webkit-font-smoothing: antialiased; 
+    text-rendering: var(--text-rendering); 
+    letter-spacing: 0.01em;
+}
+body.ready { opacity: 1; visibility: visible; }
+/* Use appropriate native cursors as fallback in addition to custom cursor */
+body a, 
+body button, 
+.project-hover-target, 
+.nav_button a, 
+.metric-card, 
+.impact-highlight-card, 
+.other-project-card { 
+    cursor: pointer; 
+}
+* { box-sizing: border-box; }
+
+/* --- Links and Focus States --- */
+a { 
+    color: var(--link-color); 
+    text-decoration: none; 
+    border-radius: 3px;
+    transition: color 0.2s ease, filter 0.2s ease;
+}
+a:hover { 
+    text-decoration: underline; 
+    filter: brightness(1.1); 
+}
+body.user-is-tabbing a:focus, 
+body.user-is-tabbing button:focus, 
+body.user-is-tabbing .project-hover-target:focus, 
+body.user-is-tabbing .nav_button a:focus, 
+body.user-is-tabbing .metric-card:focus, 
+body.user-is-tabbing .impact-highlight-card:focus, 
+body.user-is-tabbing .other-project-card:focus { 
+    outline: 2px solid var(--link-color); 
+    outline-offset: 3px; 
+    text-decoration: none; 
+    border-radius: 4px; 
+}
+a:focus:not(:focus-visible), 
+button:focus:not(:focus-visible), 
+.project-hover-target:focus:not(:focus-visible), 
+.nav_button a:focus:not(:focus-visible), 
+.metric-card:focus:not(:focus-visible), 
+.impact-highlight-card:focus:not(:focus-visible), 
+.other-project-card:focus:not(:focus-visible) { 
+    outline: none; 
+}
+
+/* --- Custom Cursor --- */
+.custom-cursor {
+    position: fixed; 
+    left: 0; 
+    top: 0;
+    width: var(--cursor-size); 
+    height: var(--cursor-size);
+    border: none; 
+    border-radius: 50%;
+    pointer-events: none; 
+    z-index: 9999;
+    opacity: 0; /* Initially hidden */
+    transform: translate(-50%, -50%) scale(1);
+    /* Transitions for smooth changes */
+    transition: background-color 0.2s ease, width 0.3s ease, height 0.3s ease, 
+                mix-blend-mode 0.1s step-end, backdrop-filter 0.3s ease;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    background-color: var(--cursor-bg);
+    color: var(--cursor-text-color); /* Use variable for text color */
+    font-family: var(--font-sans); 
+    font-size: 14px; 
+    font-weight: 600;
+    text-transform: uppercase; 
+    letter-spacing: 0.05em;
+    overflow: hidden;
+    /* Default blend mode and filter */
+    mix-blend-mode: normal;
+    backdrop-filter: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for better visibility */
+}
+
+/* Hover state for project cards: More blur, lighter text */
+.custom-cursor.cursor-hover-project {
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    background-color: rgba(255, 255, 255, 0.05); /* Higher opacity for better visibility */
+}
+
+/* VIEW text container for better visibility */
+.cursor-view-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.2s ease;
+    padding: 4px 8px;
+    border-radius: 4px;
+/*    background-color: var(--cursor-view-bg); */
+    color: #666;
+    font-weight: 600; /* Bolder for better visibility */
+    font-size: 16px; /* Larger for better visibility */
+    text-shadow: 1px 1px 12px rgba(120, 120, 120, 0.85); /* Text shadow for contrast */
+    white-space: nowrap;
+    text-align: center;
+    line-height: 1;
+    z-index: 10;
+}
+
+/* Hover state for other interactive elements: Border + adjusted background */
+.custom-cursor.cursor-hover-blend {
+    background-color: rgba(55, 55, 55, 0.1); /* Keep light but less transparent */
+    border: 1.5px solid rgba(255, 255, 255, 0.7);
+    mix-blend-mode: exclusion; /* Ensure blend mode is reset */
+    /* Note: transition for border is not explicitly defined, might snap */
+}
+
+/* Hide custom cursor on touch devices */
+@media (pointer: coarse) { 
+    .custom-cursor { 
+        display: none !important; 
+    } 
+    
+    body { 
+        cursor: auto; 
+    } 
+    
+    body a, 
+    body button, 
+    .project-hover-target, 
+    .nav_button a, 
+    .metric-card, 
+    .impact-highlight-card, 
+    .other-project-card { 
+        cursor: pointer; 
+    } 
+}
+
+/* --- Global Navigation (Moved from index.css) --- */
+/* Desktop Nav Pill */
+.nav_wrapper.desktop-nav-links {
+    position: fixed;
+    top: var(--padding-medium);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* Fill max-width */
+    max-width: 900px; /* Constrain width, adjust as needed */
+    margin: 0 auto; /* Center the block */
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1;
+    text-transform: uppercase;
+    z-index: 100; /* Ensure it's above most content */
+    padding: var(--nav-pill-padding-y) var(--padding-medium); /* Padding inside the pill */
+    color: var(--text-primary);
+    display: flex;
+    align-items: center; /* Ensure vertical centering */
+    justify-content: space-between; /* Logo left, Links group right */
+    pointer-events: auto; /* Allow interaction */
+    background-color: var(--nav-bg); /* Semi-transparent background */
+    backdrop-filter: blur(15px); /* Background blur */
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: var(--border-radius-pill);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease-out; /* Smooth background change on scroll */
+}
+.nav_button {
+    display: block;
+    width: auto;
+    position: relative;
+    padding: 0;
+    pointer-events: auto;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    border-radius: 4px; /* For focus outline */
+}
+.nav_button a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    padding: 6px 10px;
+    position: relative;
+    z-index: 1; /* Above the ::before pseudo-element */
+    border-radius: var(--border-radius-pill); /* Match parent shape */
+    overflow: hidden; /* Contain the ::before */
+    transition: color 0.2s ease-out; /* Faster transition */
+}
+/* Animated background fill on hover */
+.nav_button a::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: var(--accent-color);
+    transform: translateY(101%); /* Start hidden below */
+    transition: transform 0.2s cubic-bezier(0.7, 0, 0.3, 1); /* Faster transition */
+    z-index: -1; /* Behind the text */
+    border-radius: var(--border-radius-pill); /* Match parent shape */
+}
+/* Hover state triggered by JS adding 'hovering' class */
+.nav_button a.hovering::before {
+    transform: translateY(0); /* Slide background up */
+}
+.nav_button a.hovering {
+    color: var(--bg-primary); /* Change text color on hover */
+    text-decoration: none;
+}
+
+/* --- Hamburger Menu Button (Initially hidden on Desktop) --- */
+.hamburger-menu {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+    z-index: 101; /* Above nav wrapper */
+    position: relative; /* For positioning lines */
+    width: 40px;
+    height: 40px;
+}
+.hamburger-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-primary);
+    margin: 5px auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 1px;
+}
+/* Hamburger animation when nav is open */
+body.nav-open .hamburger-menu .line-1 {
+    transform: translateY(7px) rotate(45deg);
+}
+body.nav-open .hamburger-menu .line-2 {
+    opacity: 0;
+}
+body.nav-open .hamburger-menu .line-3 {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --- Mobile Navigation Overlay (Initially hidden) --- */
+.mobile-nav-overlay {
+    display: none; /* Hidden on desktop */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(28, 28, 30, 0.98);
+    z-index: 9998; /* Below hamburger */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-standard);
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+    pointer-events: none;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+/* Mobile Nav Links Styling */
+.mobile-nav-overlay .nav_button {
+    display: block;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.mobile-nav-overlay .nav_button a.mobile-nav-link {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    padding: 15px 30px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: color 0.2s ease-out;
+}
+.mobile-nav-overlay .nav_button a.mobile-nav-link:hover,
+.mobile-nav-overlay .nav_button a.mobile-nav-link:focus {
+    color: var(--link-color);
+}
+/* Staggered animation for links appearing */
+body.nav-open .mobile-nav-overlay .nav_button {
+    transform: translateY(0);
+    opacity: 1;
+}
+body.nav-open .mobile-nav-overlay .nav_button:nth-child(1) { transition-delay: 0.15s; } /* Home */
+body.nav-open .mobile-nav-overlay .nav_button:nth-child(2) { transition-delay: 0.2s; } /* Work */
+body.nav-open .mobile-nav-overlay .nav_button:nth-child(3) { transition-delay: 0.25s; } /* About */
+body.nav-open .mobile-nav-overlay .nav_button:nth-child(4) { transition-delay: 0.3s; } /* Contact */
+
+/* --- Global Layout & Container --- */
+.main-container { /* Used on project pages */
+    max-width: 900px; margin: 0 auto; padding: var(--padding-standard) var(--padding-standard) var(--gap-standard) var(--padding-standard);
+}
+
+/* --- Footer (Common) --- */
+.footer { position: relative; padding: 60px var(--padding-standard); text-align: center; font-family: var(--font-sans); font-size: 13px; color: var(--text-secondary); background-color: var(--bg-primary); border-top: 1px solid var(--border-color); margin-top: var(--gap-standard); }
+.footer-content { display: flex; flex-direction: column; align-items: center; gap: 15px; }
+.social-links { display: flex; gap: 20px; margin-top: 10px; }
+.social-links a { color: var(--text-secondary); display: inline-block; font-size: 20px; transition: color var(--hover-transition), transform var(--hover-transition); }
+.social-links a:hover { color: var(--text-primary); transform: translateY(-3px); }
+.footer .copyright { font-size: 12px; color: var(--text-tertiary); margin-top: 20px; }
+.cta-button { display: inline-block; background-color: var(--link-color); color: var(--bg-primary); padding: 10px 24px; border-radius: var(--border-radius-pill); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; font-size: 13px; transition: transform var(--hover-transition), background-color var(--hover-transition); margin-top: 10px; }
+.cta-button:hover { background-color: var(--accent-color); text-decoration: none; transform: scale(1.05); filter: none; }
+
+/* --- Utility Classes --- */
+.mobile_only_text { display: none; }
+.desktop_only_text { display: inline; }
+.content-block { /* Base visibility for JS animations */
+    /* visibility: hidden; */ /* Let JS handle visibility/opacity via autoAlpha */
+}
+/* Text animation helpers */
+.text_ani_wrap { overflow: hidden; display: inline-block; }
+.stagger { display: block; }
+.letter { display: inline-block; /* visibility: hidden; */ } /* Let JS handle visibility */
+
+
+/* --- Global Responsive Adjustments --- */
+@media all and (max-width: 768px) {
+    :root { 
+        --padding-standard: 30px; 
+        --gap-standard: 50px; 
+        --padding-medium: 20px;
+        --base-font-size: 15px;
+        --line-height-normal: 1.7;
+        --line-height-relaxed: 1.8;
+    }
+    .mobile_only_text { display: inline; }
+    .desktop_only_text { display: none; }
+    .main-container { padding: 60px var(--padding-medium); }
+    .footer { padding: 30px var(--padding-medium); }
+
+    /* --- Mobile Navigation Adjustments --- */
+    .hamburger-menu {
+        display: block; /* Show hamburger */
+        position: fixed; /* Keep it fixed relative to viewport */
+        top: calc(var(--padding-medium) / 2); /* Adjust position */
+        right: var(--padding-medium);
+        z-index: 9999 !important; /* Keep high z-index */
+        background-color: rgba(28, 28, 30, 0.6); /* Add background */
+        border-radius: 6px; /* Add some rounding */
+    }
+    .nav_wrapper.desktop-nav-links {
+        display: none; /* Hide desktop nav pill */
+    }
+
+    /* Show and manage mobile overlay */
+    .mobile-nav-overlay {
+        display: flex; /* Use flex here now */
+        pointer-events: none; /* Initially hidden */
+    }
+    body.nav-open .mobile-nav-overlay {
+        transform: translateX(0); /* Slide in */
+        pointer-events: auto; /* Allow interaction when open */
+    }
+
+    /* Hide top-left logo on mobile if desired */
+    .top-left-logo {
+        display: none;
+    }
+}
+
+@media all and (max-width: 540px) {
+    :root { 
+        --padding-standard: 20px; 
+        --padding-medium: 15px; 
+        --padding-small: 10px; 
+        --gap-standard: 40px; 
+        --nav-gap: 15px; 
+        --nav-pill-padding-x: 15px; 
+        --nav-pill-padding-y: 8px;
+        --base-font-size: 14px;
+        --line-height-normal: 1.75;
+        --line-height-relaxed: 1.85;
+    }
+    .main-container { padding: 40px var(--padding-small); }
+    .footer { font-size: 11px; padding: 25px var(--padding-small); }
+    .footer-content { gap: 12px; }
+    .social-links { gap: 18px; }
+    .social-links a { font-size: 18px; }
+    /* Adjust mobile link styles for smaller screens if needed */
+    .mobile-nav-overlay .nav_button a.mobile-nav-link {
+        font-size: 1.3rem;
+    }
+    
+    /* Improve contrast for secondary text */
+    :root {
+        --text-secondary: #c5c5ca; /* Lightened for better contrast */
+        --text-tertiary: #a8a8ae; /* Lightened for better contrast */
+    }
+}
+
+/* Standardize icon styling */
+.fa-solid, .fa-brands { width: 1em; text-align: center; display: inline-block; vertical-align: middle; /* Better alignment */ }
+
+/* --- No Script Fallback --- */
+noscript .noscript-warning {
+    position: fixed; top: 0; left: 0; width: 100%; background: #ffdddd; color: #a00; padding: 10px; text-align: center; z-index: 10001; font-family: var(--font-sans); font-size: 14px;
+}
+noscript body {
+    opacity: 1 !important; visibility: visible !important; /* Ensure content shows if JS is off */
+}
+
+/* --- GSAP Fallback (Ensure default cursor if GSAP fails) --- */
+.no-gsap body {
+    cursor: auto !important;
+}
+.no-gsap body a, .no-gsap body button, .no-gsap .project-hover-target, .no-gsap .nav_button a, .no-gsap .metric-card, .no-gsap .impact-highlight-card, .no-gsap .other-project-card {
+    cursor: pointer !important;
+}
+.no-gsap .custom-cursor {
+    display: none !important;
+}
+
+/* --- Site Logo Styles --- */
+.site-logo-link, .site-logo-container a { display: inline-block; }
+.site-logo { display: block; height: auto; }
+
+.top-left-logo {
+    position: fixed;
+    top: var(--padding-medium);
+    left: var(--padding-medium);
+    z-index: 102; /* Above nav */
+    opacity: 0;
+    transition: opacity 0.4s ease 0.5s; /* Fade in after delay */
+}
+body.ready .top-left-logo { opacity: 1; }
+.top-left-logo .site-logo {
+    max-height: 35px; /* Adjust size as needed */
+    width: auto;
+}
+
+/* Logo within Desktop Nav Pill */
+.desktop-nav-links .nav-logo-container {
+    /* Remove specific padding */
+    display: flex; /* Use flex to center logo vertically */
+    align-items: center;
+    /* No padding needed here, handled by parent align-items */
+}
+.desktop-nav-links .nav-logo {
+    max-height: 20px; /* Revert to smaller size for pill */
+    width: auto;
+    /* vertical-align is not needed for flex item */
+}
+/* Hide text animation wrapper if logo replaces it */
+.desktop-nav-links .nav-logo-container .text_ani_wrap { display: none; }
+
+/* Logo in Mobile Overlay */
+.mobile-nav-logo-container {
+    margin-bottom: var(--padding-standard); /* Space below logo */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s; /* Delay slightly less than first nav item */
+}
+body.nav-open .mobile-nav-logo-container { opacity: 1; transform: translateY(0); }
+.mobile-nav-logo {
+    max-height: 30px; /* Make logo smaller */
+    width: auto;
+    margin: 0 auto; /* Center logo */
+}
+
+/* Logo in Footer */
+.footer-logo-container {
+    margin-bottom: var(--padding-medium);
+}
+.footer-logo {
+    max-height: 30px; /* Adjust size */
+    width: auto;
+    margin: 0 auto; /* Center logo */
+}
+
+/* Group for right-aligned text links */
+.nav-link-group {
+    display: flex;
+    align-items: center;
+    gap: var(--padding-small); /* Smaller gap between links (e.g., 16px) */
+}
