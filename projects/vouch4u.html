@@ -14,12 +14,14 @@
     <link rel="icon" type="image/png" href="../img/logo-fav.png">
     <link rel="apple-touch-icon" href="../img/logo-fav.png">
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEASUREMENT_ID"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EH27PEHCH6"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-MEASUREMENT_ID');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-EH27PEHCH6');
     </script>
 </head>
 <body>
@@ -67,11 +69,12 @@
 
         <header class="project-header content-block mb-large">
             <h1>Vouch4U: Slashing Cash Reimbursement Time by 64%</h1>
-             <div class="info-card meta-info-card">
+            <p class="subtitle">Reducing cash reimbursement delays by replacing their manual, paper-based voucher system with an automated solution at Kaveri Garage.</p> 
+            <div class="info-card meta-info-card">
                  <dl class="meta-info">
                      <dt>My Role</dt><dd>Product Designer</dd>
-                     <dt>Timeline</dt><dd>4 Weeks (MVP) + Refinements</dd>
-                     <dt>Team</dt><dd>1 PM, 1 Engineer, Myself</dd>
+                     <dt>Timeline</dt><dd>8 Weeks (MVP) + Refinements</dd>
+                     <dt>Team</dt><dd>1 Project Manager, 1 Developer, Myself</dd>
                  </dl>
              </div>
 
@@ -81,9 +84,6 @@
                       onerror="this.onerror=null; this.src='https://placehold.co/900x506/cccccc/666666?text=Hero+Image+Missing'; this.alt='Placeholder for missing hero image';">
             </section>
 
-             <p class="subtitle">
-                At Kaveri Garage, a busy TATA Motors dealership, a manual, paper-based voucher system created significant operational friction. Employees faced up to 10-day waits, causing financial strain, while managers and accountants battled inefficiency. This bottleneck hampered productivity and morale.
-            </p>
             <p>
                  As the Product Designer, I led the design for this digital transformation. The initial MVP successfully digitized the core workflow, achieving a <strong>64% reduction</strong> in average reimbursement time. Subsequent iterations focused on optimizing the user experience based on feedback and usability testing.
              </p>
@@ -93,6 +93,7 @@
 
             <section class="content-block mb-large">
                 <h2>The Problem: Bottlenecks & Frustration</h2>
+                <p class="subtitle"> At Kaveri Garage, a busy TATA Motors dealership, a manual, paper-based voucher system created significant operational friction. Employees faced up to 10-day waits, causing financial strain, while managers and accountants battled inefficiency. This bottleneck hampered productivity and morale.</p> 
                 <p>The multi-day delay wasn't just slow; it directly impacted employees' finances, especially lower-income staff. For the business, it translated to <strong>hidden costs</strong>: hours wasted by accountants tracking paper, managers bogged down in approvals upon return from travel, and frequent interruptions due to a lack of transparency in the process.</p>
                
                 <figure class="figure-margin-medium">
@@ -101,7 +102,7 @@
                </figure>
 
                 <h3 class="mt-medium">Who Was Affected?</h3>
-                <table class="persona-table-transposed">
+                <table class="persona-table">
                     <thead>
                         <tr>
                             <th>Attribute</th>
@@ -111,15 +112,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr> <th>Est. Age Range</th> <td>25-50</td> <td>30-55</td> <td>40-60+</td> </tr>
-                        <tr> <th>Est. Salary/Context</th> <td>Lower income; <em>out-of-pocket expenses significant.</em></td> <td>Mid-level; <em>responsible for accuracy & process adherence.</em></td> <td>Higher income; <em>time-constrained, needs efficiency.</em></td> </tr>
-                        <tr> <th>Pain Point/Need</th> <td><strong>Financial Strain:</strong> Long waits critical. Lack of status updates caused anxiety.</td> <td><strong>Inefficient Manual Work:</strong> Time consumed tracking paper, chasing signatures, reconciliation, fielding inquiries.</td> <td><strong>Approval Backlogs & Follow-up Difficulty:</strong> Travel led to piled-up approvals. Difficulty tracking status easily.</td> </tr>
-                         <tr> <th>Quote/Sentiment</th> <td><em>"Where's my money?"</em></td> <td><em>"...need a better way to screen, track, manage..."</em></td> <td><em>"Managing approvals takes too much time..."</em></td> </tr>
+                        <tr> <th>Est. Age Range</th> <td data-label="Ground Staff">25-50</td> <td data-label="Accountant">30-55</td> <td data-label="Manager / CEO">40-60+</td> </tr>
+                        <tr> <th>Est. Salary/Context</th> <td data-label="Ground Staff">Lower income; <em>out-of-pocket expenses significant.</em></td  data-label="Accountant"> <td>Mid-level; <em>responsible for accuracy & process adherence.</em></td> <td data-label="Manager / CEO">Higher income; <em>time-constrained, needs efficiency.</em></td> </tr>
+                        <tr> <th>Pain Point/Need</th> <td data-label="Ground Staff"><strong>Financial Strain:</strong> Long waits critical. Lack of status updates caused anxiety.</td> <td  data-label="Accountant"><strong>Inefficient Manual Work:</strong> Time consumed tracking paper, chasing signatures, reconciliation, fielding inquiries.</td> <td data-label="Manager / CEO"><strong>Approval Backlogs & Follow-up Difficulty:</strong> Travel led to piled-up approvals. Difficulty tracking status easily.</td> </tr>
+                         <tr> <th>Quote/Sentiment</th> <td data-label="Ground Staff"><em>"Where's my money?"</em></td> <td  data-label="Accountant"><em>"...need a better way to screen, track, manage..."</em></td> <td data-label="Manager / CEO"><em>"Managing approvals takes too much time..."</em></td> </tr>
                     </tbody>
                 </table>
 
                 <h3 class="mt-large">Goals & Constraints</h3>
-                <p>Our primary goal was clear: <strong>drastically cut reimbursement time (target: < 3 days)</strong> and significantly improve transparency for all stakeholders. We operated under constraints including a <strong>tight 4-week MVP timeline</strong> and <strong>varying levels of user tech literacy</strong>. The initial focus was strategically placed on digitizing the core <strong>approval process</strong>, accepting that full paper elimination (like OCR) would be a later phase.</p>
+                <p>Our primary goal was clear: <strong>drastically cut reimbursement time (target: < 3 days)</strong> and significantly improve transparency for all stakeholders. We operated under constraints including a <strong>tight 8-week MVP timeline</strong> and <strong>varying levels of user tech literacy</strong>.</p>
+                <p>The initial focus was strategically placed on digitizing the core <strong>approval process</strong>, accepting that full paper elimination (like OCR) would be a later phase.</p>
             </section>
 
             <section class="content-block mb-large">
@@ -230,7 +232,7 @@
                  <h3>Interactive Prototype</h3>
                   <div class="prototype-link-container">
                     <!-- *** Replace with your actual Figma Embed URL *** -->
-                    <iframe width="800" height="450" src="https://embed.figma.com/proto/YOUR_PROTOTYPE_EMBED_URL_HERE" allowfullscreen title="Vouch4U Interactive Prototype"></iframe>
+                    <iframe rel="preload" "800" height="550" src="https://embed.figma.com/proto/TTbHi0o3KCKT1f7Qc0DUhv/Voucher-App?node-id=136-16378&scaling=scale-down&content-scaling=fixed&page-id=107%3A5512&starting-point-node-id=136%3A16378&embed-host=share" allowfullscreen title="Vouch4U Interactive Prototype"></iframe>
                   </div>
              </section>
 
@@ -294,14 +296,11 @@
         <footer class="footer" role="contentinfo" id="contact">
             <!-- Footer content remains the same -->
              <div class="footer-content">
-                <!-- *** Update Mailto Link *** -->
                  <a href="mailto:veeradwork@gmail.com" class="cta-button project-hover-target">Let's Connect</a>
                  <div class="social-links">
-                      <!-- *** Update Social Links *** -->
                       <a href="https://www.linkedin.com/in/veeramanoharan/" title="LinkedIn" aria-label="LinkedIn Profile" class="project-hover-target social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                      <a href="#" title="GitHub" aria-label="GitHub Profile" class="project-hover-target social-icon"><i class="fa-brands fa-github"></i></a>
+                      <a href="https://github.com/VeeraPD/" title="GitHub" aria-label="GitHub Profile" class="project-hover-target social-icon"><i class="fa-brands fa-github"></i></a>
                  </div>
-                 <!-- *** Update Year and Name *** -->
                  <div class="copyright">&copy; 2025 Veera Manoharan Rajamannar.</div>
              </div>
         </footer>

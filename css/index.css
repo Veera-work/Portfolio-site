@@ -120,7 +120,7 @@
 .project-item .status-tag { position: absolute; top: var(--padding-small); left: var(--padding-small); background-color: rgba(255, 255, 255, 0.15) ; font-size: 10px; font-weight: 500; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; z-index: 3; -webkit-filter: invert(100%); filter: invert(100%);}
 
  /* --- About Section --- */
-.about-section { padding: 80px var(--padding-standard) 40px; max-width: 900px; margin: var(--gap-standard) auto 0 auto; border-top: 1px solid var(--border-color); /* visibility: hidden; clip-path: circle(0% at 50% 50%); */ /* Let JS handle visibility */ display: flex; align-items: flex-start; gap: var(--gap-standard); }
+.about-section { padding: 80px var(--padding-standard) 40px; max-width: 900px; margin: var(--gap-standard) auto 0 auto; border-top: 1px solid var(--border-color); display: flex; align-items: flex-start; gap: var(--gap-standard); }
 .about-text { flex: 1; /* Let text container grow and shrink */ }
 .about-image-placeholder { flex-shrink: 0; /* Prevent image container from shrinking */ width: 250px; /* Explicit width for image container */ display: flex; justify-content: center; align-items: flex-start; padding-top: 10px; position: relative; }
 .about-image-placeholder img.profile-pic-img { display: block; width: 100%; max-width: 250px; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: var(--border-radius-medium); background-color: rgba(30, 30, 30, 0.5); position: relative; z-index: 2; transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;}
@@ -194,7 +194,7 @@
         margin-top: 1em;
         line-height: 1.7;
     }
-    .work, .about-section { padding: 60px var(--padding-medium); }
+    .work, .about-section { padding: 60px var(--padding-medium);  overflow: hidden; }
     .work-title-heading { margin-bottom: 30px; padding-bottom: 10px; }
     .project-item { margin-bottom: var(--gap-standard); }
     .project-item .project-text { padding: var(--padding-medium); }
@@ -242,7 +242,7 @@
         line-height: 1.8;
     }
     .webgl_wrapper canvas { filter: blur(8px); }
-    .work, .about-section { padding: 40px var(--padding-small); }
+    .work, .about-section { padding: 40px var(--padding-standard); overflow: hidden; }
     .work-title-heading { margin-bottom: 25px; font-size: clamp(1.3rem, 5vw, 1.6rem); }
     .project-item { margin-bottom: var(--gap-standard); border-radius: var(--border-radius-medium); }
     .project-item .project-text { padding: var(--padding-medium); }

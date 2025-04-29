@@ -75,7 +75,7 @@
 .project-content blockquote { 
     font-family: var(--font-sans); 
     font-size: 16px; 
-    color: var(--text-secondary); 
+    color: var(--text-tertiary); 
     margin-bottom: 1.5em; 
     max-width: 750px; 
     line-height: var(--line-height-relaxed);
@@ -203,7 +203,7 @@
 /* Status Pill Styles */
 .status-pill {
     display: inline-block;
-    padding: 4px 8px;
+    padding: 4px 12px;
     border-radius: var(--border-radius-pill);
     font-size: 12px;
     font-weight: 500;
@@ -211,18 +211,21 @@
 }
 
 .status-pending {
-    background-color: rgba(255, 191, 0, 0.2);
-    color: #ffbf00;
+    background-color: #FEF7E0;
+    color: #A75800;
+    border-color: #A75800;
 }
 
 .status-approved {
-    background-color: rgba(48, 209, 88, 0.2);
-    color: #30d158;
+    background-color: #E6F4EA;
+    color: #0A6E2C;
+    border-color: #0a6e2c;
 }
 
 .status-rejected {
-    background-color: rgba(255, 69, 58, 0.2);
-    color: #ff453a;
+    background-color: #FCE8E6;
+    color: #B91C1C;
+    border-color: #B91C1C;
 }
 
 /* Common Project Component Styles */
@@ -328,11 +331,11 @@ th {
 }
 
 .persona-table tr th:first-child, 
-.persona-table-transposed tr th:first-child {
+.persona-table tr th:first-child {
     background-color: rgba(28, 28, 30, 0.7);
 }
 
-.persona-table-transposed tr:first-child th {
+.persona-table tr:first-child th {
     background-color: rgba(28, 28, 30, 0.8);
 }
 
@@ -510,25 +513,111 @@ th {
     }
     
     /* Tables become scrollable */
+    /*
     .table-container {
         overflow-x: auto;
-        padding-bottom: 6px; /* Space for scrollbar */
+        padding-bottom: 6px;
         max-width: 100%;
     }
     
     th, td {
         padding: 10px var(--padding-small);
-        min-width: 120px; /* Ensure minimum width */
+        min-width: 120px;
     }
     
     table {
         font-size: 14px;
     }
-    
-    /* Screen Grid Responsiveness */
+    Screen Grid Responsiveness 
     .screens-row {
         grid-template-columns: 1fr;
     }
+    */
+
+    /* Responsive Table Transformation */
+@media screen and (max-width: 767px) {
+    /* Hide table header on mobile */
+    .persona-table thead {
+      display: none;
+    }
+    
+    /* Make each row a card */
+    .persona-table tbody tr {
+      display: block;
+      margin-bottom: 1.5rem;
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-medium);
+      padding: var(--padding-small);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    /* Transform cells into label:value format */
+    .persona-table tbody td {
+      display: flex;
+      padding: 0.5rem var(--padding-small);
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      text-align: left;
+    }
+    
+    .persona-table tbody td:last-child {
+      border-bottom: none;
+    }
+    
+    /* Add headers via data-label attribute */
+    .persona-table tbody td:before {
+      content: attr(data-label);
+      font-weight: 600;
+      color: var(--text-primary);
+      min-width: 30%;
+      margin-right: var(--padding-small);
+    }
+    
+    /* Fix for first cell (typically a header) */
+    .persona-table tbody tr th {
+      display: block;
+      background-color: rgba(28, 28, 30, 0.7);
+      margin: -0.5rem -0.5rem 0.5rem -0.5rem;
+      padding: 0.75rem var(--padding-small);
+      border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
+      border: none;
+      font-size: 1rem;
+    }
+    
+    /* Styled version for the transposed table */
+    .persona-table-transposed tbody tr th {
+      background-color: rgba(28, 28, 30, 0.7);
+      border-bottom: 1px solid var(--border-color);
+      padding: 0.75rem var(--padding-small);
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    
+    /* Apply similar styling to both table variants */
+    .persona-table-transposed tbody tr {
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+    
+    .persona-table-transposed tbody td {
+      display: block;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem var(--padding-small);
+      border: none;
+      position: relative;
+      padding-left: var(--padding-standard);
+    }
+    
+    .persona-table-transposed tbody td:before {
+      content: attr(data-label);
+      font-weight: 600;
+      color: var(--text-primary);
+      position: absolute;
+      left: var(--padding-small);
+    }
+  }
+
 }
 
 @media all and (max-width: 540px) {

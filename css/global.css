@@ -162,17 +162,16 @@ button:focus:not(:focus-visible),
     text-transform: uppercase; 
     letter-spacing: 0.05em;
     overflow: hidden;
-    /* Default blend mode and filter */
     mix-blend-mode: normal;
     backdrop-filter: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for better visibility */
+    box-shadow: 0 0 2px rgba(80, 80, 80, 0.5); /* Subtle shadow for better visibility */
 }
 
 /* Hover state for project cards: More blur, lighter text */
 .custom-cursor.cursor-hover-project {
-    backdrop-filter: blur(18px);
+    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(18px);
-    background-color: rgba(255, 255, 255, 0.05); /* Higher opacity for better visibility */
+    background-color: rgba(215, 215, 215, 0.05); /* Higher opacity for better visibility */
 }
 
 /* VIEW text container for better visibility */
@@ -186,10 +185,10 @@ button:focus:not(:focus-visible),
     padding: 4px 8px;
     border-radius: 4px;
 /*    background-color: var(--cursor-view-bg); */
-    color: #666;
-    font-weight: 600; /* Bolder for better visibility */
-    font-size: 16px; /* Larger for better visibility */
-    text-shadow: 1px 1px 12px rgba(120, 120, 120, 0.85); /* Text shadow for contrast */
+    color: #333;
+    font-weight: 500;
+    font-size: 14px; 
+    text-shadow: 1px 1px 24px rgba(250, 250, 250, 0.85); /* Text shadow for contrast */
     white-space: nowrap;
     text-align: center;
     line-height: 1;
@@ -225,7 +224,6 @@ button:focus:not(:focus-visible),
     } 
 }
 
-/* --- Global Navigation (Moved from index.css) --- */
 /* Desktop Nav Pill */
 .nav_wrapper.desktop-nav-links {
     position: fixed;
@@ -287,6 +285,7 @@ button:focus:not(:focus-visible),
     z-index: -1; /* Behind the text */
     border-radius: var(--border-radius-pill); /* Match parent shape */
 }
+
 /* Hover state triggered by JS adding 'hovering' class */
 .nav_button a.hovering::before {
     transform: translateY(0); /* Slide background up */
@@ -294,6 +293,10 @@ button:focus:not(:focus-visible),
 .nav_button a.hovering {
     color: var(--bg-primary); /* Change text color on hover */
     text-decoration: none;
+}
+
+.home-link  img:hover {
+    filter: invert(1);
 }
 
 /* --- Hamburger Menu Button (Initially hidden on Desktop) --- */
@@ -397,9 +400,7 @@ body.nav-open .mobile-nav-overlay .nav_button:nth-child(4) { transition-delay: 0
 /* --- Utility Classes --- */
 .mobile_only_text { display: none; }
 .desktop_only_text { display: inline; }
-.content-block { /* Base visibility for JS animations */
-    /* visibility: hidden; */ /* Let JS handle visibility/opacity via autoAlpha */
-}
+
 /* Text animation helpers */
 .text_ani_wrap { overflow: hidden; display: inline-block; }
 .stagger { display: block; }
