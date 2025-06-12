@@ -94,7 +94,7 @@
             <section class="content-block mb-large">
                 <h2>The Problem: Bottlenecks & Frustration</h2>
                 <p class="subtitle"> At Kaveri Garage, a busy TATA Motors dealership, a manual, paper-based voucher system created significant operational friction. Employees faced up to 10-day waits, causing financial strain, while managers and accountants battled inefficiency. This bottleneck hampered productivity and morale.</p> 
-                <p>The multi-day delay wasn't just slow; it directly impacted employees' finances, especially lower-income staff. For the business, it translated to <strong>hidden costs</strong>: hours wasted by accountants tracking paper, managers bogged down in approvals upon return from travel, and frequent interruptions due to a lack of transparency in the process.</p>
+                <p class="subtitle">The multi-day delay wasn't just slow; it directly <strong> impacted employees' finances </strong>, especially lower-income staff. It also translated to <strong>hidden costs for the business</strong>: hours wasted by accountants tracking paper, managers bogged down in approvals upon return from travel, and frequent interruptions due to a lack of transparency in the process.</p>
                
                 <figure class="figure-margin-medium">
                     <img src="../img/vouch4u-paper-voucher.png" alt="Manual tracking voucher, Signature delays, lack of status visibility" class="img-styled centered-image max-width-750" onerror="this.onerror=null; this.src='https://placehold.co/750x400/cccccc/666666?text=Workflow+Diagram+Missing'; this.alt='Placeholder for missing workflow diagram';">
@@ -113,7 +113,7 @@
                     </thead>
                     <tbody>
                         <tr> <th>Est. Age Range</th> <td data-label="Ground Staff">25-50</td> <td data-label="Accountant">30-55</td> <td data-label="Manager / CEO">40-60+</td> </tr>
-                        <tr> <th>Est. Salary/Context</th> <td data-label="Ground Staff">Lower income; <em>out-of-pocket expenses significant.</em></td  data-label="Accountant"> <td>Mid-level; <em>responsible for accuracy & process adherence.</em></td> <td data-label="Manager / CEO">Higher income; <em>time-constrained, needs efficiency.</em></td> </tr>
+                        <tr> <th>Salary & Context</th> <td data-label="Ground Staff">Lower income; <em>out-of-pocket expenses significant.</em></td  data-label="Accountant"> <td>Mid-level; <em>responsible for accuracy & process adherence.</em></td> <td data-label="Manager / CEO">Higher income; <em>time-constrained, needs efficiency.</em></td> </tr>
                         <tr> <th>Pain Point/Need</th> <td data-label="Ground Staff"><strong>Financial Strain:</strong> Long waits critical. Lack of status updates caused anxiety.</td> <td  data-label="Accountant"><strong>Inefficient Manual Work:</strong> Time consumed tracking paper, chasing signatures, reconciliation, fielding inquiries.</td> <td data-label="Manager / CEO"><strong>Approval Backlogs & Follow-up Difficulty:</strong> Travel led to piled-up approvals. Difficulty tracking status easily.</td> </tr>
                          <tr> <th>Quote/Sentiment</th> <td data-label="Ground Staff"><em>"Where's my money?"</em></td> <td  data-label="Accountant"><em>"...need a better way to screen, track, manage..."</em></td> <td data-label="Manager / CEO"><em>"Managing approvals takes too much time..."</em></td> </tr>
                     </tbody>
@@ -126,30 +126,33 @@
 
             <section class="content-block mb-large">
                 <h2>Research: Observing the Reality</h2>
-                <p>To deeply understand the problem, we combined stakeholder interviews (Accountants, Managers, sample Staff) with crucial <strong>contextual inquiry</strong>—observing the actual paper-based workflow in action. This ethnographic approach revealed friction points missed in interviews, such as the difficulty tracking down traveling managers for signatures and the frequent, disruptive ad-hoc status checks via phone calls.</p>
+                <p>To deeply understand the problem, we combined stakeholder interviews (Accountants, Managers, sample Staff) with <strong>contextual inquiry</strong>—observing the actual paper-based workflow in action. This ethnographic research revealed friction points missed in interviews, such as the difficulty tracking down traveling managers for signatures and the frequent, disruptive ad-hoc status checks via phone calls.</p>
 
                 <figure class="figure-margin-medium">
                      <img src="../img/vouch4u-old-userflow.png" alt="Diagram illustrating bottlenecks in the old paper voucher workflow: manual tracking, signature delays, lack of status visibility" class="img-styled centered-image max-width-750" onerror="this.onerror=null; this.src='https://placehold.co/750x400/cccccc/666666?text=Workflow+Diagram+Missing'; this.alt='Placeholder for missing workflow diagram';">
                     <figcaption class="figcaption-centered-small">Mapping the existing paper process highlighted key bottlenecks and communication gaps.</figcaption>
                 </figure>
 
-                <h3 class="mt-large">Key Insights</h3>
-                <ul>
-                    <li>Approving managers needed a fast, efficient way to approve requests <strong>on mobile</strong>, especially while traveling.</li>
-                    <li>Accountants required a <strong>centralized digital system</strong> for initiating requests, tracking progress, and reducing manual data entry/follow-up.</li>
-                    <li>All users, especially ground staff, desperately needed <strong>transparency</strong> on request status and faster cash release.</li>
-                    <li><strong>Insight → Strategy:</strong> The most critical bottleneck wasn't just tracking, but the delay in <em>cash release</em>. This led to the strategic decision to implement <strong>provisional digital approvals</strong> in the MVP, allowing payments to be processed faster based on digital sign-offs, with physical reconciliation happening subsequently.</li>
-                </ul>
+                
+                <div class="decision-card">
+                    <h3 class="mt-large">Key Insights</h3>
+                    <ul>
+                        <li>Approvers needed a fast, efficient way to approve requests <strong>on mobile</strong>, especially while traveling.</li>
+                        <li>Accountants required a <strong>centralized digital system</strong> for initiating requests, tracking progress, and reducing manual data entry/follow-up.</li>
+                        <li>All users, especially ground staff, needed <strong>transparency</strong> on request status and faster cash release.</li>
+                        <li><strong>Insight → Strategy:</strong> The most critical bottleneck wasn't just tracking, but the delay in <em>cash release</em>. This led to the strategic decision to implement <strong>provisional digital approvals</strong> in the MVP, allowing payments to be processed faster based on digital sign-offs, with physical reconciliation happening subsequently.</li>
+                    </ul>
+                </div>
             </section>
 
             <section class="content-block mb-large">
                 <h2>Strategy: Focus and Trade-offs</h2>
                 <p>Our strategy centered on delivering maximum impact within the MVP constraints. We prioritized features addressing the core approval bottleneck and enhancing transparency.</p>
                 <ul>
-                    <li><strong>Deferred (for MVP):</strong> Features like direct bank integration, Optical Character Recognition (OCR) for receipts, and a dedicated UI for employees to <em>submit</em> requests were deferred.</li>
                     <li><strong>Focused On:</strong> The core <strong>approval workflow</strong> targeting accountants (for initiation & tracking) and managers (for approvals) as primary MVP users, as they controlled the main bottlenecks.</li>
                     <li><strong>Key Design Principle:</strong> Opted for clear, <strong>scannable UI elements</strong> like summary cards and status pills over dense tables, prioritizing mobile usability for managers.</li>
                     <li><strong>Accepted Trade-off:</strong> Implemented <strong>provisional approvals</strong> to dramatically speed up payment release, acknowledging that formal physical reconciliation would still occur later, balancing speed with necessary financial controls.</li>
+                    <li><strong>Deferred (for MVP):</strong> Features like direct bank integration, Optical Character Recognition (OCR) for receipts, and a dedicated UI for employees to <em>submit</em> requests were deferred.</li>
                 </ul>
             </section>
 
@@ -163,7 +166,7 @@
                         <p>To clarify the multi-step process and combat manager approval delays, we designed two key elements for the Request Details screen:</p>
                         <ul>
                             <li><strong>Card-Based Approval Steps:</strong> Uses distinct iconography (<i data-lucide="check-circle"></i> Completed, <i data-lucide="hourglass"></i> Pending, <i data-lucide="user"></i> Future) and color-coding to intuitively show progress and bottlenecks.</li>
-                            <li><strong>Sticky Footer Action Bar:</strong> Appears only when action is needed by the current user, ensuring Approve/Reject buttons are unmissable on mobile, directly addressing a key bottleneck identified in research.</li>
+                            <li><strong>Sticky Footer Action Bar:</strong> Appears only when action is needed by the current user. By ensuring Approve/Reject buttons are unmissable on mobile, directly addressing a key bottleneck identified in research.</li>
                         </ul>
                     </div>
                     <div class="solution-visual">
@@ -211,7 +214,7 @@
                     <h4>Foundational Design System</h4>
                     <p>To ensure visual consistency and streamline development during the refinement phase, we established a foundational design system in Figma. This library of core styles (colors, typography, spacing) and reusable components (buttons, cards, status indicators, form elements) enabled efficient iteration based on feedback and ensured a cohesive user experience across the application. This systematic approach greatly facilitated the post-MVP refinement process.</p>
                      <figure>
-                         <img src="../img/Vouch4u-design-system.png" alt="Overview of the Vouch4U Design System components: colors, typography, buttons, cards, status indicators." class="img-design-system" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/800x400/cccccc/666666?text=Design+System+Image+Missing'; this.alt='Placeholder: Design system components';">
+                         <img src="../img/Vouch4u-design-system.png" alt="Overview of the Vouch4U Design System components: colors, typography, buttons, cards, status indicators." class="img-design-system zoomable-image" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/800x400/cccccc/666666?text=Design+System+Image+Missing'; this.alt='Placeholder: Design system components';">
                          <figcaption>Core components and styles from the Vouch4U Design System.</figcaption>
                      </figure>
                  </div>
@@ -242,7 +245,7 @@
 
                  <div class="results-grid mt-medium">
                       <div class="metric-card project-hover-target" tabindex="0">
-                          <span class="metric-value metric-value-counter">64</span>%
+                          <span class="metric-value metric-value-counter">67%</span>
                           <span class="metric-label">Reduction in Avg. Reimbursement Time (Post-MVP)</span>
                       </div>
                        <div class="metric-card project-hover-target" tabindex="0">
