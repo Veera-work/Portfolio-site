@@ -1,0 +1,258 @@
+/* ================================
+   10-Column Grid System
+   ================================ */
+
+/* Main wrapper for background stretching */
+.content-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Container with max-width constraint and proper centering */
+.container {
+    width: 100%;
+    max-width: 1920px;
+    padding-left: 48px;
+    padding-right: 48px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* 10-column grid with 32px gutters */
+.grid-10 {
+    display: flex;
+    gap: 32px;
+    width: 100%;
+    min-height: fit-content;
+}
+
+/* Column width calculations - fixed to ensure proper stretching */
+.col-1 {
+    width: calc(10% - 28.8px);
+    min-width: 0;
+    flex-shrink: 0;
+}
+.col-2 {
+    width: calc(20% - 25.6px);
+    min-width: 0;
+    flex-shrink: 0;
+}
+.col-3 {
+    width: calc(30% - 22.4px);
+    min-width: 0;
+    flex-shrink: 0;
+}
+.col-4 {
+    width: calc(40% - 19.2px);
+    min-width: 0;
+    flex-shrink: 0;
+}
+.col-5 {
+    width: calc(50% - 16px);
+    min-width: 0;
+    flex-shrink: 0;
+}
+.col-6 {
+    width: calc(60% - 12.8px);
+    min-width: 0;
+    flex-shrink: 0;
+}
+.col-7 {
+    width: calc(70% - 9.6px);
+    min-width: 0;
+    flex-shrink: 0;
+}
+.col-8 {
+    width: calc(80% - 6.4px);
+    min-width: 0;
+    flex-shrink: 0;
+}
+.col-9 {
+    width: calc(90% - 3.2px);
+    min-width: 0;
+    flex-shrink: 0;
+}
+.col-10 {
+    width: calc(100% - 0px);
+    min-width: 0;
+    flex-shrink: 0;
+}
+
+/* Offset classes for positioning */
+.offset-1 { margin-left: calc(10% + 3.2px); }
+.offset-2 { margin-left: calc(20% + 6.4px); }
+.offset-3 { margin-left: calc(30% + 9.6px); }
+.offset-4 { margin-left: calc(40% + 12.8px); }
+.offset-5 { margin-left: calc(50% + 16px); }
+.offset-6 { margin-left: calc(60% + 19.2px); }
+
+/* ================================
+   Hero Section Styles
+   ================================ */
+
+.hero-content {
+    position: relative;
+    width: 100%;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 10;
+}
+
+.blob-container {
+    position: absolute;
+    top: -144px;
+    right: 0;
+    z-index: 1;
+    height: 600px;
+    width: 771px;
+    border-radius: 0;
+    overflow: hidden;
+    pointer-events: auto;
+    background: none;
+    box-shadow: none;
+}
+
+/* ================================
+   About Section Styles
+   ================================ */
+
+.about-grid {
+    display: flex;
+    gap: 32px;
+    width: 100%;
+    min-height: fit-content;
+}
+
+.about-text {
+    width: calc(50% - 16px);
+    min-width: 0;
+    flex-shrink: 0;
+}
+
+.about-details {
+    width: calc(50% - 16px);
+    min-width: 0;
+    flex-shrink: 0;
+}
+
+/* ================================
+   Contact Section Styles
+   ================================ */
+
+.contact-content-desktop {
+    width: 60%;
+    margin-left: auto;
+    min-width: 0;
+    flex-shrink: 0;
+}
+
+.contact-content-mobile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================================
+   Responsive Breakpoints
+   ================================ */
+
+/* Mobile and Tablet (below 1024px) */
+@media (max-width: 1023px) {
+    .container {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .grid-10 {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .col-1, .col-2, .col-3, .col-4, .col-5,
+    .col-6, .col-7, .col-8, .col-9, .col-10 {
+        width: 100%;
+    }
+
+    .offset-1, .offset-2, .offset-3, .offset-4, .offset-5, .offset-6 {
+        margin-left: 0;
+    }
+
+    .blob-container {
+        display: none;
+    }
+
+    .about-grid {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .about-text,
+    .about-details {
+        width: 100%;
+    }
+
+    .contact-content-desktop {
+        display: none;
+    }
+}
+
+/* Desktop (1024px and above) */
+@media (min-width: 1024px) {
+    .contact-content-mobile {
+        display: none;
+    }
+}
+
+/* ================================
+   Utility Classes
+   ================================ */
+
+.relative { position: relative; }
+.absolute { position: absolute; }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-start { align-items: flex-start; }
+.items-center { align-items: center; }
+.justify-start { justify-content: flex-start; }
+.justify-center { justify-content: center; }
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.shrink-0 { flex-shrink: 0; }
+
+/* Gap utilities */
+.gap-4 { gap: 16px; }
+.gap-6 { gap: 24px; }
+.gap-8 { gap: 32px; }
+.gap-10 { gap: 40px; }
+.gap-12 { gap: 48px; }
+
+/* Margin and padding utilities */
+.mt-4 { margin-top: 16px; }
+.mt-6 { margin-top: 24px; }
+.mt-8 { margin-top: 32px; }
+.mt-10 { margin-top: 40px; }
+.mt-30 { margin-top: 120px; }
+
+.mb-4 { margin-bottom: 16px; }
+.mb-6 { margin-bottom: 24px; }
+.mb-8 { margin-bottom: 32px; }
+.mb-10 { margin-bottom: 40px; }
+
+.p-6 { padding: 24px; }
+.p-8 { padding: 32px; }
+.p-10 { padding: 40px; }
+
+.py-15 { padding-top: 60px; padding-bottom: 60px; }
+.py-20 { padding-top: 80px; padding-bottom: 80px; }
+.py-30 { padding-top: 120px; padding-bottom: 120px; }
+
+/* Responsive padding */
+@media (min-width: 1024px) {
+    .lg\\:py-30 { padding-top: 120px; padding-bottom: 120px; }
+    .lg\\:p-10 { padding: 40px; }
+}
